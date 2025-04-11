@@ -32,7 +32,7 @@ const textureLoader = new THREE.TextureLoader();
 
 // Draco loader
 const dracoLoader = new DRACOLoader();
-dracoLoader.setDecoderPath('draco/');
+dracoLoader.setDecoderPath('./draco/');
 
 // GLTF loader
 const gltfLoader = new GLTFLoader();
@@ -90,7 +90,7 @@ gui.addColor(debugObject, 'portalColorEnd').onChange((value) => {
 /**
  * Model
  */
-gltfLoader.load('portal.glb', (gltf) => {
+gltfLoader.load('./portal.glb', (gltf) => {
   gltf.scene.children.find((child) => {
     if (child.name === 'baked') {
       child.material = bakedMaterial;
